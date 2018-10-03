@@ -25,9 +25,11 @@ class CalcEngine {
     }
     
     func performOperation(Operator operation: String) -> (result:Double?, feedback: String) {
-        let lastTwo = stack.suffix(2);
-        let first = lastTwo[0];
-        let second = lastTwo[1];
+        //let lastTwo = stack.suffix(2);
+        //let first = lastTwo[0];
+        //let second = lastTwo[1];
+        let first = stack[stack.count - 1]
+        let second = stack[stack.count - 2]
         var strOperation : String;
         var result : Double;
         
