@@ -285,22 +285,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="button0" destination="uGy-jv-LjK" id="hCa-Qq-ZkR"/>
-                        <outlet property="button1" destination="daa-uQ-ta5" id="3cu-nA-4fm"/>
-                        <outlet property="button2" destination="cAm-gR-7Kx" id="XGm-7N-Nga"/>
-                        <outlet property="button3" destination="eaz-KW-sow" id="kOE-Td-OqY"/>
-                        <outlet property="button4" destination="vtN-cB-FyV" id="ZsD-Ih-WtG"/>
-                        <outlet property="button5" destination="gnb-uN-Bgc" id="8ya-sK-eli"/>
-                        <outlet property="button6" destination="i1J-le-V45" id="3mY-TE-y0E"/>
-                        <outlet property="button7" destination="m3v-x3-jas" id="4B7-Yh-5zP"/>
-                        <outlet property="button8" destination="bSs-4i-V7N" id="mQP-x3-5HG"/>
-                        <outlet property="button9" destination="eqf-E7-w71" id="JCR-kV-Mvf"/>
-                        <outlet property="buttonCancel" destination="cvi-Q2-GG1" id="z7c-Ck-0z0"/>
-                        <outlet property="buttonDelen" destination="DM8-f2-7NY" id="1fU-Kk-2jg"/>
-                        <outlet property="buttonEnter" destination="0me-5i-aZF" id="22c-Wy-aoL"/>
-                        <outlet property="buttonMaal" destination="2Tv-Kb-rdd" id="Lbw-eb-gr4"/>
-                        <outlet property="buttonMin" destination="Ytm-Ae-iBG" id="nOr-2P-dlN"/>
-                        <outlet property="buttonPlus" destination="cCy-ad-g2X" id="6gc-JG-YQC"/>
                         <outlet property="labelZin" destination="0H5-j5-ktW" id="RfU-cy-RGR"/>
                         <outlet property="textViewScherm" destination="Mqg-mo-aTY" id="YLy-P9-SkK"/>
                     </connections>

@@ -14,25 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelZin: UILabel!
     
-//    @IBOutlet weak var buttonPlus: UIButton!
-//    @IBOutlet weak var buttonMin: UIButton!
-//    @IBOutlet weak var buttonMaal: UIButton!
-//    @IBOutlet weak var buttonDelen: UIButton!
-//
-//    @IBOutlet weak var buttonCancel: UIButton!
-//    @IBOutlet weak var buttonEnter: UIButton!
-//
-//
-//    @IBOutlet weak var button0: UIButton!
-//    @IBOutlet weak var button1: UIButton!
-//    @IBOutlet weak var button2: UIButton!
-//    @IBOutlet weak var button3: UIButton!
-//    @IBOutlet weak var button4: UIButton!
-//    @IBOutlet weak var button5: UIButton!
-//    @IBOutlet weak var button6: UIButton!
-//    @IBOutlet weak var button7: UIButton!
-//    @IBOutlet weak var button8: UIButton!
 //    @IBOutlet weak var button9: UIButton!
+    
+    var currentNumber:String;
     
     
     override func viewDidLoad() {
@@ -41,17 +25,18 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func digitPressed(_ sender: Any) {
-        
+    @IBAction func digitPressed(_ sender: UIButton) {
+        //labelZin.text =  sender.titleLabel?.text
+        currentNumber = sender.titleLabel?.text
     }
     
-    @IBAction func enterPressed(_ sender: Any) {
+    @IBAction func enterPressed(_ sender: UIButton) {
     }
     
-    @IBAction func operationPressed(_ sender: Any) {
+    @IBAction func operationPressed(_ sender: UIButton) {
     }
     
-    @IBAction func clearPressed(_ sender: Any) {
+    @IBAction func clearPressed(_ sender: UIButton) {
     }
 }
 
