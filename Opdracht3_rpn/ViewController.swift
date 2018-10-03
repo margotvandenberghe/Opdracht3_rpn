@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBAction func digitPressed(_ sender: UIButton) {
         //labelZin.text =  sender.titleLabel?.text
         currentNumber = currentNumber + String(sender.titleLabel?.text ?? "")
+        clearTextField()
     }
     
     @IBAction func enterPressed(_ sender: UIButton) {
@@ -37,6 +38,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func operationPressed(_ sender: UIButton) {
+        if calcEngine.getStack().count < 2 {
+            labelZin.text = "Je moet minimum 2 getallen invoeren voordat je een bewerking kan uitvoeren"
+        }
+        else {
+            let s = String(sender.titleLabel?.text ?? "")
+            let r = calcEngine.performOperation(Operator: s)
+            labelZin.text = r.feedback
+            updateTextField()
+        }
+        
     }
     
     @IBAction func clearPressed(_ sender: UIButton) {
