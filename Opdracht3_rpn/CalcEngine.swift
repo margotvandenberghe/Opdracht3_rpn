@@ -58,6 +58,10 @@ class CalcEngine {
         
     }
     
+    func getStack () -> Array<Double> {
+        return stack
+    }
+    
     
     
 }

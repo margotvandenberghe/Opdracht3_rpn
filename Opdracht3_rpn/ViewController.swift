@@ -14,10 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelZin: UILabel!
     
-//    @IBOutlet weak var button9: UIButton!
+    let calcEngine = CalcEngine()
     
-    var currentNumber:String;
-    
+    var currentNumber: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +26,42 @@ class ViewController: UIViewController {
     
     @IBAction func digitPressed(_ sender: UIButton) {
         //labelZin.text =  sender.titleLabel?.text
-        currentNumber = sender.titleLabel?.text
+        currentNumber = currentNumber + String(sender.titleLabel?.text ?? "")
     }
     
     @IBAction func enterPressed(_ sender: UIButton) {
+        let doub:Double = Double(currentNumber) ?? 0
+        calcEngine.addOperand(Operand: doub)
+        currentNumber = ""
+        updateTextField()
     }
     
     @IBAction func operationPressed(_ sender: UIButton) {
     }
     
     @IBAction func clearPressed(_ sender: UIButton) {
+        calcEngine.clearStack()
+        clearTextField()
     }
+    
+    func updateTextField() {
+        var s = ""
+        for d in calcEngine.getStack() {
+            if s == "" {
+                s = s + String(d)
+            }
+            else {
+                s = s + "\n" + String(d)
+            }
+        }
+        textViewScherm.text = s
+    }
+    
+    func clearTextField() {
+        textViewScherm.text = ""
+    }
+    
+    
 }
+
 
