@@ -21,20 +21,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        textViewScherm.text = ""
     }
 
     
     @IBAction func digitPressed(_ sender: UIButton) {
         //labelZin.text =  sender.titleLabel?.text
         currentNumber = currentNumber + String(sender.titleLabel?.text ?? "")
-        clearTextField()
+        //clearTextField()
     }
     
     @IBAction func enterPressed(_ sender: UIButton) {
         let doub:Double = Double(currentNumber) ?? 0
         calcEngine.addOperand(Operand: doub)
+        updateTextField(number: currentNumber)
         currentNumber = ""
-        updateTextField()
     }
     
     @IBAction func operationPressed(_ sender: UIButton) {
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
             let s = String(sender.titleLabel?.text ?? "")
             let r = calcEngine.performOperation(Operator: s)
             labelZin.text = r.feedback
-            updateTextField()
+            updateTextField(number: String(r.result ?? 0))
         }
         
     }
@@ -53,25 +54,34 @@ class ViewController: UIViewController {
     @IBAction func clearPressed(_ sender: UIButton) {
         calcEngine.clearStack()
         clearTextField()
+        labelZin.text = ""
     }
     
-    func updateTextField() {
-        var s = ""
-        for d in calcEngine.getStack() {
-            if s == "" {
-                s = s + String(d)
-            }
-            else {
-                s = s + "\n" + String(d)
-            }
-        }
-        textViewScherm.text = s
+    func updateTextField(number: String) {
+//        var s = ""
+//        for d in calcEngine.getStack() {
+//            if s == "" {
+//                s = s + String(d)
+//            }
+//            else {
+//                s = s + "\n" + String(d)
+//            }
+//        }
+        textViewScherm.text = textViewScherm.text + number + "\n"
+        scrollTextViewToBottom(textView: textViewScherm)
     }
     
     func clearTextField() {
         textViewScherm.text = ""
     }
     
+    func scrollTextViewToBottom(textView: UITextView) {
+        if textView.text.count > 0 {
+            let location = textView.text.count - 1
+            let bottom = NSMakeRange(location, 1)
+            textView.scrollRangeToVisible(bottom)
+        }
+    }
     
 }
 

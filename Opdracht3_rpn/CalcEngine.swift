@@ -53,7 +53,7 @@ class CalcEngine {
         let s1 = "Getal " + String(first) + " en getal " + String(second)
         let fb =  s1 + " zijn " + strOperation;
         
-        stack.removeLast(2)
+        //stack.removeLast(2)
         stack.append(result)
         
         return (result, fb)
